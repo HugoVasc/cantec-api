@@ -1,0 +1,18 @@
+version: '0.1'
+
+services:
+  api:
+    image: hugovasc/cantec-api:latest
+    ports:
+      - "8000:8000"
+  database:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    # volumes:
+    #   - ./app:/usr/local/apache2/htdocs/
+    environment:
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_USER: "postgres"
+      POSTGRES_DB: "cantec"
+    
